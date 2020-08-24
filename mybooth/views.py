@@ -9,6 +9,9 @@ def all_photos(request):
 
     return render(request, 'all-photos/photos.html', {"images": images, })
 
+def search_results(request):
+    return render(request, 'all-photos/search-results.html')
+
 # def today_photos(request):
 #     # return HttpResponse('Welcome to the Nguthi booth')
 #     date = dt.date.today()

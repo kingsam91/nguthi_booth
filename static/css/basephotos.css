@@ -1,0 +1,24 @@
+h1 {
+    color: blueviolet;
+}
+html {
+    font: 80%
+}
+
+body {
+    background: #dddddd
+}
+
+.navbar {
+    border-radius: 0
+}
+
+.single-img {
+    background: #ffffff;
+    padding: 15px
+}
+
+.single-img img {
+    height: 150px;
+    max-width: 100%
+}

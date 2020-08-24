@@ -5,7 +5,8 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^$',views.all_photos, name='allPhotos'),
-     url(r'^photo/(\d+)',views.all_photos,name ='photo'),
+    url(r'^photo/(\d+)',views.all_photos,name ='photo'),
+    url(r'^search/', views.search_results, name='search_results'),
     # url('^today_photos$',views.today_photos, name='todayPhotos')
     # url('^past_photos/(\d{4}-\d{2}-\d{2})/$',views.past_p hotos,name = 'pastPhotos') 
 ]
