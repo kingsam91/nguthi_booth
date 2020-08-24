@@ -22,3 +22,19 @@ class CategoryTestClass(TestCase):
 
     def tearDown(self):
         Category.objects.all().delete()
+
+
+class LocatoinTestClass(TestCase):
+
+    def setUp(self):
+        self.location = Locatoin(
+            name='Mombasa'
+        )
+
+    def test_instance(self):
+        self.assertTrue(isinstance(self.location, Locatoin))
+
+    def test_save_method(self):
+        self.location.save_location()
+        locations = Locatoin.objects.all()
+        self.assertTrue(len(locations)>0)
