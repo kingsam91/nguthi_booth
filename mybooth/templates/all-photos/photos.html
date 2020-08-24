@@ -1,0 +1,21 @@
+{%extends 'all-photos/base.html'%}
+{% load static %}
+{% load bootstrap3 %}
+{% block content %}
+{{block.super}}
+
+<div class="row">
+    {% for image in images %}
+    <div class="col-lg-3">
+        <div class="single-img">
+            <a href="{% url 'photo' image.id %}" data-toggle="modal" data-target="#flipFlop">
+                <img src="{{image.image.url}}" class="img-responsive" alt="booth" />
+            </a>
+            <h3>{{ image.name }}</h3>
+            <p>{{image.description|truncatechars:200}}</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

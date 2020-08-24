@@ -1,11 +1,13 @@
-  
-from django.shortcuts import render,redirect
-from django.http import HttpResponse, Http404
-import datetime as dt
+from django.http import HttpResponse
+from django.shortcuts import render
+from .models import Image
 
-def welcome(request):
-    # return render(request, 'welcome.html')
-    return render(request, 'all-photos/past_photos.html', {"date": "xxx"})
+# Create your views here.
+
+def all_photos(request):
+    images = Image.get_images()
+
+    return render(request, 'all-photos/photos.html', {"images": images, })
 
 # def today_photos(request):
 #     # return HttpResponse('Welcome to the Nguthi booth')
