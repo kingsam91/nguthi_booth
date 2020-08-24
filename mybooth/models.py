@@ -13,3 +13,9 @@ class Category(models.Model):
 
     def __str__(self):
         returnself.name
+
+class Image(models.Model):
+    image = models.TextField()
+    name = models.CharField(max_length=30)
+    description = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
