@@ -15,7 +15,7 @@ class Category(models.Model):
         returnself.name
 
 class Image(models.Model):
-    image = models.TextField()
+    image = models.ImageField(upload_to='uploads/')
     name = models.CharField(max_length=30)
     description = models.TextField()
     category = models.ForeignKey(
@@ -23,3 +23,8 @@ class Image(models.Model):
     locatoin = models.ForeignKey(
         Locatoin, on_delete=models.SET_NULL, null=True, default=1)
     created_at = models.DateTimeField(auto_now_add=True)
+
+    @classmethod
+    def get_images(cls):
+        images = cls.objects.filter()
+        return images
